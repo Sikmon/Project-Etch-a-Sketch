@@ -1,1 +1,22 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    margin: 0; 
+    background: palegoldenrod;
+}
 
+.myGrid {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr); 
+    grid-template-rows: repeat(16, 1fr); 
+    gap: 0; /
+    border: 1px solid black;
+}
+
+.grid-item { 
+    border: 1px solid black;
+    min-width: 30px; 
+    min-height: 30px;
+}
