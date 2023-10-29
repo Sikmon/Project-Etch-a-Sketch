@@ -1,20 +1,19 @@
 const container = document.getElementById('container');
 const clearBtn = document.getElementById('clr');
-let rows = 64;
-let cols = 64;
-let newR = 16;
-let newC = 16;
 
-function createGrid() {
+
+function createGrid(rows,cols,size) {
     clearContainer();
     
-container.style.gridTemplateColumns = 'repeat(64, 1fr)'
+    
+    
+container.style.gridTemplateColumns = `repeat(${rows}, 1fr)`;
   for (let i=0;i<rows; i++) {
       for (let j=0;j<cols; j++) {
         const gridItem = document.createElement('div');
         gridItem.className = 'gridItem';
-        gridItem.style.maxHeight = "10px";
-        gridItem.style.maxWidth = "10px";
+        gridItem.style.maxHeight = size;
+        gridItem.style.maxWidth = size;
         gridItem.addEventListener('mouseover', () => {
             gridItem.style.backgroundColor = 'black';
         });
@@ -28,29 +27,7 @@ container.style.gridTemplateColumns = 'repeat(64, 1fr)'
 
 
 
-function createGrid16() {
-
-    clearContainer();
-      
-    
-    container.style.gridTemplateColumns = 'repeat(16, 1fr)';
-    for (let i=0;i<newR; i++) {
-        for (let j=0;j<newC; j++) {
-          const gridItem = document.createElement('div');
-          gridItem.className = 'gridItem';
-          gridItem.style.maxHeight = "30px";
-          gridItem.style.maxWidth = "30px";
-          gridItem.addEventListener('mouseover', () => {
-              gridItem.style.backgroundColor = 'black';
-          });
-          container.appendChild(gridItem);
-          
-        }
-     }
-     
-  }  
-
-  createGrid16();
+  createGrid(50,50,this);
 
   function clearContainer() {
     while (container.firstChild) {
