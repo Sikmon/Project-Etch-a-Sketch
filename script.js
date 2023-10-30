@@ -2,6 +2,10 @@ const container = document.getElementById('container');
 const clearBtn = document.getElementById('clr');
 let mouseHold = false ;
 const slider = document.getElementById('gridSize');
+const showInput = document.getElementById('sliderVal');
+const controls = document.getElementById('controls');
+slider.defaultValue = 16;
+let defaultValue = slider.defaultValue;
 
 document.addEventListener('mousedown', () => {
     mouseHold = true;
@@ -37,13 +41,21 @@ function createGrid(rows,cols,size) {
 
 
 
+  
+  createGrid(defaultValue,defaultValue,this);
 
-  createGrid(16,16,this);
+  showInput.textContent = `${defaultValue}x${defaultValue}`;
+  controls.appendChild(showInput);
 
   slider.addEventListener('input', () => {
     let gSize = slider.value;
-    createGrid(gSize,gSize,this);
+    createGrid(gSize,gSize,this); 
+    showInput.textContent = `${slider.value}x${slider.value}`;
+    
   })
+
+ 
+
 
   function clearContainer() {
     while (container.firstChild) {
