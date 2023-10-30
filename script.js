@@ -7,6 +7,7 @@ const controls = document.getElementById('controls');
 slider.defaultValue = 16;
 let defaultValue = slider.defaultValue;
 let currentColor = 'black';
+const pickColor = document.getElementById('colorPicker');
 
 
 function randomColor() {
@@ -95,19 +96,22 @@ clearBtn.addEventListener('click', clearGrid);
 const btn16 = document.getElementById('grd16');
 const btn64 = document.getElementById('grd64');
 const btnErase = document.getElementById('erase');
+pickColor.addEventListener('input', () => {
+    currentColor = pickColor.value;
+})
 btnErase.addEventListener('click', () => {
     currentColor = 'white';
 })
 btn16.addEventListener('click',changeColor);
 btn64.addEventListener('click',() => {
     currentColor = 'black';
-    createGrid(slider.value,slider.value,this);
+    
 });
 
 
 function changeColor() {
      currentColor = randomColor;
-    createGrid(slider.value,slider.value,this);
+    
 
 }
 
