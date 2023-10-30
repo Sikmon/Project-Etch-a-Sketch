@@ -4,19 +4,68 @@ body {
     align-items: center;
     height: 100vh; 
     margin: 0; 
-    background: palegoldenrod;
+    background: rgb(187, 85, 2);
+    flex-direction: column;
+    gap: 20px;
 }
 
 .myGrid {
     display: grid;
-    grid-template-columns: repeat(16, 1fr); 
-    grid-template-rows: repeat(16, 1fr); 
-    gap: 0; /
+    gap: 0; 
     border: 1px solid black;
+    background: white;
+    max-width:510px;
+    max-height: 510px;
+    min-height: 510px;
+    min-width: 510px;
 }
 
-.grid-item { 
-    border: 1px solid black;
-    min-width: 30px; 
-    min-height: 30px;
+.gridItem { 
+    border:none;
+    
+    
+   
+
 }
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+
+
+.slider {
+    -webkit-appearance: none;
+    width: 75%;
+    height: 10px;
+    border-radius: 5px;
+    background: #cc0303;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    
+  }
+  
+  .slider:hover {
+    opacity:1 ;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #102ed8;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #0a47b8;
+    cursor: pointer;
+  }
