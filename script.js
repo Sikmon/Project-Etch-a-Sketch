@@ -6,6 +6,16 @@ const showInput = document.getElementById('sliderVal');
 const controls = document.getElementById('controls');
 slider.defaultValue = 16;
 let defaultValue = slider.defaultValue;
+let currentColor = 'black';
+
+
+function randomColor() {
+    let color = [];
+    for (let i = 0; i < 3; i++) {
+      color.push(Math.floor(Math.random() * 256));
+    }
+    return 'rgb(' + color.join(', ') + ')';
+  } 
 
 document.addEventListener('mousedown', () => {
     mouseHold = true;
@@ -16,6 +26,7 @@ document.addEventListener('mouseup', () => {
 })
 
 function createGrid(rows,cols,size) {
+  
   clearContainer(); 
   container.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
   for (let i=0;i<rows; i++) {
@@ -26,7 +37,12 @@ function createGrid(rows,cols,size) {
         gridItem.style.maxWidth = size;
         gridItem.addEventListener('mouseover', () => {
             if (mouseHold) {
-            gridItem.style.backgroundColor = 'black';
+                if (currentColor === randomColor) {
+                     gridItem.style.backgroundColor = randomColor();
+                    } else {
+                      gridItem.style.backgroundColor = currentColor;
+                    }
+           
            
            }
          });
@@ -41,10 +57,11 @@ function createGrid(rows,cols,size) {
 
 
 
+
   
   createGrid(defaultValue,defaultValue,this);
 
-  showInput.textContent = `${defaultValue}x${defaultValue}`;
+  showInput.textContent = `Grid size:${defaultValue}x${defaultValue}`;
   controls.appendChild(showInput);
 
   slider.addEventListener('input', () => {
@@ -77,6 +94,25 @@ clearBtn.addEventListener('click', clearGrid);
 
 const btn16 = document.getElementById('grd16');
 const btn64 = document.getElementById('grd64');
+const btnErase = document.getElementById('erase');
+btnErase.addEventListener('click', () => {
+    currentColor = 'white';
+})
+btn16.addEventListener('click',changeColor);
+btn64.addEventListener('click',() => {
+    currentColor = 'black';
+    createGrid(slider.value,slider.value,this);
+});
+
+
+function changeColor() {
+     currentColor = randomColor;
+    createGrid(slider.value,slider.value,this);
+
+}
+
+
+
 
 
 
