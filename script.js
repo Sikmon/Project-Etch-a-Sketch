@@ -4,6 +4,7 @@ let mouseHold = false ;
 const slider = document.getElementById('gridSize');
 const showInput = document.getElementById('sliderVal');
 const controls = document.getElementById('controls');
+const setting = document.getElementById('set');
 slider.defaultValue = 16;
 let defaultValue = slider.defaultValue;
 let currentColor = 'black';
@@ -63,12 +64,12 @@ function createGrid(rows,cols,size) {
   createGrid(defaultValue,defaultValue,this);
 
   showInput.textContent = `Grid size:${defaultValue}x${defaultValue}`;
-  controls.appendChild(showInput);
+  setting.insertBefore(showInput,slider);
 
   slider.addEventListener('input', () => {
     let gSize = slider.value;
     createGrid(gSize,gSize,this); 
-    showInput.textContent = `${slider.value}x${slider.value}`;
+    showInput.textContent = `Grid size: ${slider.value}x${slider.value}`;
     
   })
 
@@ -114,9 +115,6 @@ function changeColor() {
     
 
 }
-
-
-
 
 
 
