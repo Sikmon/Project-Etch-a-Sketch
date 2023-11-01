@@ -9,18 +9,26 @@
 </head>
 <body>
     <div class="controls" id="controls">
-        <input type="color" id="colorPicker" class="colorPicker"/>
-         <p id="sliderVal" class="sliderVal"></p>        
-         <input type="range" id="gridSize" class="slider" name="Grid Size" min="2" max="100" />
+        <div class="clr">
+            <p>Pick a color:</p>
+            <input type="color" id="colorPicker" class="colorPicker"/>
+            
+        </div>
+        
+        <div class="set" id="set">
+         <h3 id="sliderVal" class="sliderVal"> </h3> 
+         <input type="range" id="gridSize" class="slider" name="Grid Size" min="2" max="100" />   
+        </div>
+        <div class="btnDiv">
          <button class="clearBTN" id="clr">Clear</button>
          <button class="grid 16" id="grd16">RGB</button>
          <button class="grid 64" id="grd64">Black</button>
          <button class="erase" id="erase">Erase</button>
+        </div> 
     </div>
+    
    
-    <div class="myGrid" id="container">
-
-    </div>
+    <div class="myGrid" id="container"></div>
      <script src="script.js"></script>
 </body>
 </html>
