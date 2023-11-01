@@ -4,8 +4,8 @@ body {
     align-items: center;
     height: 100vh; 
     margin: 0; 
-    background: rgb(187, 85, 2);
-    flex-direction: column;
+    background: rgb(150, 56, 56);
+    flex-direction: row;
     gap: 20px;
 }
 
@@ -14,23 +14,25 @@ body {
     gap: 0; 
     border: 1px solid black;
     background: white;
-    max-width:510px;
-    max-height: 510px;
-    min-height: 510px;
-    min-width: 510px;
+    max-width:700px;
+    max-height: 700px;
+    min-height: 700px;
+    min-width: 700px;
+    cursor:;
 }
 
 .gridItem { 
     border:none;
+    border-radius: 15%;
     
     
    
 
 }
 
-.controls {
+#controls {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 20px;
 }
 
@@ -68,4 +70,41 @@ body {
     height: 25px;
     background: #0a47b8;
     cursor: pointer;
+  }
+  .controls {
+    display: flex;
+    flex-direction: row;
+  }
+
+ 
+
+  .colorPicker {
+    border: none;
+    background: fixed;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  button {
+    cursor: pointer;
+  }
+  h3 {
+    font-size: 15px;
+  }
+
+  #set {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btnDiv {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+  }
+  .clr {
+    display: flex;
+    flex-direction: column;
   }
